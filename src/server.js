@@ -3,7 +3,7 @@ const initSignaling = require('./signaling');
 const http = require("http");
 
 const app = express();
-const port = 4000;
+const port = 8000;
 const server = http.createServer(app);
 initSignaling(server);
 

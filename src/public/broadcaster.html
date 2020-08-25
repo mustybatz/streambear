@@ -1,22 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Broadcaster</title>
-    <meta charset="UTF-8" />
-  </head>
-  <body>
-    <section class="select">
-      <label for="audioSource">Audio source: </label>
-      <select id="audioSource"></select>
-    </section>
 
-    <section class="select">
-      <label for="videoSource">Video source: </label>
-      <select id="videoSource"></select>
-    </section>
+<head>
+  <title>Broadcaster</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
 
-    <video playsinline autoplay muted></video>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/broadcast.js"></script>
-  </body>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Live stream app</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/broadcaster.html">Broadcaster</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Watch</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center mt-4">
+        <video playsinline autoplay muted class="p-0"></video>
+      </div>
+      <div class="col-6">
+        <section class="select">
+          <label for="audioSource">Audio source: </label>
+          <select id="audioSource" class="custom-select my-1 mr-sm-2"></select>
+        </section>
+      </div>
+      <div class="col-6">
+        <section class="select">
+          <label for="videoSource">Video source: </label>
+          <select id="videoSource" class="custom-select my-1 mr-sm-2"></select>
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/broadcast.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

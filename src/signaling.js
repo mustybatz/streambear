@@ -1,7 +1,7 @@
 const initSignaling = (server) => {
     const io = require('socket.io')(server);
     let broadcaster;
-    io.sockets.on("error", e => console.log(e));
+    io.sockets.on("error", error => console.error(error));
 
     io.sockets.on("connection", socket => {
 

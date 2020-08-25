@@ -3,12 +3,7 @@ const config = {
   iceServers: [
       { 
         "urls": "stun:stun.l.google.com:19302",
-      },
-      // { 
-      //   "urls": "turn:TURN_IP?transport=tcp",
-      //   "username": "TURN_USERNAME",
-      //   "credential": "TURN_CREDENTIALS"
-      // }
+      }
   ]
 };
 
@@ -41,7 +36,7 @@ socket.on("offer", (id, description) => {
 socket.on("candidate", (id, candidate) => {
   peerConnection
     .addIceCandidate(new RTCIceCandidate(candidate))
-    .catch(e => console.error(e));
+    .catch(error => console.error(error));
 });
 
 socket.on("connect", () => {
@@ -61,6 +56,5 @@ window.onunload = window.onbeforeunload = () => {
 };
 
 function enableAudio() {
-  console.log("Enabling audio")
   video.muted = false;
 }
